@@ -9,7 +9,6 @@ function Encrypt() {
         const msg = document.getElementById('floatingTextarea1').value;
         const hash = CryptoJS.AES.encrypt(msg, window.key);
         document.getElementById('floatingTextarea2').value = hash.toString();
-        alert(window.key);
     };
 
     function downloadKey() {
@@ -23,10 +22,9 @@ function Encrypt() {
 
     return (
         <div>
-            <div className="input-text-label" >
+            <div className="d-grid input-text-label" style={{ gridTemplateColumns: "2fr 2fr" }}>
                 <label>Enter the text to be encrypted (plaintext)</label>
                 <label>Your Encrypted text is:</label>
-                <CopyBtn/>
             </div>
             <div className="text" >
                 <div className="container-fluid pb-3">
@@ -47,6 +45,7 @@ function Encrypt() {
                 <button type="submit" onClick={encryptText} className="btn btn-outline-success btns">Encrypt It! <i className="fas fa-lock"></i></button>
                 <button onClick={downloadKey} className="btn btn-outline-primary btns">Save your key <i className="fas fa-download"></i></button>
             </div>
+            <CopyBtn/>
         </div>
     )
 }

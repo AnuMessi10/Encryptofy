@@ -66,10 +66,9 @@ const Decrypt = () => {
 
     return (
         <div>
-            <div className="input-text-label" >
+            <div className="d-grid input-text-label" style={{ gridTemplateColumns: "2fr 2fr" }} >
                 <label>Enter your encrypted message</label>
-                <label style={{ marginLeft: "31%" }}>Your Decrypted text is:</label>
-                <CopyBtn />
+                <label>Your Decrypted text is:</label>
             </div>
             <div className="text" >
                 <div className="container-fluid pb-3">
@@ -121,6 +120,7 @@ const Decrypt = () => {
                     </div>
                 </div>
             </div>
+            <CopyBtn />
         </div>
     )
 };

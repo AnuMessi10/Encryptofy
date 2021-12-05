@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-export {default as Header} from './Components/Header';
 export {default as Tabs} from './Components/Tabs';
 export {default as Encrypt} from './Components/Encrypt';
 export {default as Decrypt} from './Components/Decrypt';
