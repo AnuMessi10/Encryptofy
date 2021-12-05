@@ -47,7 +47,8 @@ const Decrypt = () => {
                     }
                     else {
                         document.getElementById('floatingTextarea2').value = decryptedText.toString(CryptoJS.enc.Utf8);
-                        document.getElementsByClassName('alert').style.visibility = "hidden";
+                        document.getElementsByClassName('alert')[1].style.visibility = "hidden";
+                        document.getElementsByClassName('alert')[2].style.visibility = "hidden";
                     }
                 }
                 reader.readAsText(file);
