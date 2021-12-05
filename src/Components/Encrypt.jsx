@@ -23,7 +23,7 @@ function Encrypt() {
     return (
         <div>
             <div className="d-grid input-text-label" style={{ gridTemplateColumns: "2fr 2fr" }}>
-                <label>Enter the text to be encrypted (plaintext)</label>
+                <label>Enter the text to be encrypted (plaintext):</label>
                 <label>Your Encrypted text is:</label>
             </div>
             <div className="text" >

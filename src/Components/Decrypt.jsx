@@ -4,36 +4,12 @@ import CryptoJS from 'crypto-js';
 
 const Decrypt = () => {
 
-    const keyUploadError = () => {
-        document.getElementsByClassName('alert')[0].style.visibility = "hidden";
-        document.getElementsByClassName('alert')[1].style.visibility = "visible";
-        document.getElementsByClassName('alert')[2].style.visibility = "hidden";
-        document.getElementById('floatingTextarea2').value = '';
-    }
-    const keyTypeError = () => {
-        document.getElementsByClassName('alert')[0].style.visibility = "hidden";
-        document.getElementsByClassName('alert')[1].style.visibility = "hidden";
-        document.getElementsByClassName('alert')[2].style.visibility = "visible";
-        document.getElementById('floatingTextarea2').value = '';
-    }
-
-    const handleChange = (event) => {
-        try {
-            window.FileName = `${event.target.files[0].name}`;
-            document.getElementsByClassName('alert')[1].style.visibility = "hidden";
-            document.getElementsByClassName('alert')[0].style.visibility = "visible";
-            document.getElementsByClassName('alert')[2].style.visibility = "hidden";
-            document.getElementById('alertSuccess').innerHTML = 'Key "<b>' + window.FileName + '</b>" uploaded successfully!';
-        }
-        catch (error) {
-            keyUploadError();
-        }
-    }
+    var alertBtn = document.getElementsByClassName('alert');
 
     const decryptText = () => {
         try {
-            if (document.getElementsByClassName('alert')[1].style.visibility === "visible") {
-                document.getElementsByClassName('alert')[1].style.animation = "shake 0.75s 1";
+            if (alertBtn[1].style.visibility === "visible") {
+                alertBtn[1].style.animation = "shake 0.75s 1";
             }
             var file = document.querySelector('input[type=file]').files[0];
             var reader = new FileReader()
@@ -47,8 +23,8 @@ const Decrypt = () => {
                     }
                     else {
                         document.getElementById('floatingTextarea2').value = decryptedText.toString(CryptoJS.enc.Utf8);
-                        document.getElementsByClassName('alert')[1].style.visibility = "hidden";
-                        document.getElementsByClassName('alert')[2].style.visibility = "hidden";
+                        alertBtn[1].style.visibility = "hidden";
+                        alertBtn[2].style.visibility = "hidden";
                     }
                 }
                 reader.readAsText(file);
@@ -64,10 +40,36 @@ const Decrypt = () => {
         }
     }
 
+    const keyUploadError = () => {
+        alertBtn[0].style.visibility = "hidden";
+        alertBtn[2].style.visibility = "hidden";
+        alertBtn[1].style.visibility = "visible";
+        document.getElementById('floatingTextarea2').value = '';
+    }
+    const keyTypeError = () => {
+        alertBtn[0].style.visibility = "hidden";
+        alertBtn[1].style.visibility = "hidden";
+        alertBtn[2].style.visibility = "visible";
+        document.getElementById('floatingTextarea2').value = '';
+    }
+
+    const handleChange = (event) => {
+        try {
+            window.FileName = `${event.target.files[0].name}`;
+            alertBtn[1].style.visibility = "hidden";
+            alertBtn[0].style.visibility = "visible";
+            alertBtn[2].style.visibility = "hidden";
+            document.getElementById('alertSuccess').innerHTML = 'Key "<b>' + window.FileName + '</b>" uploaded successfully!';
+        }
+        catch (error) {
+            keyUploadError();
+        }
+    }
+
     return (
         <div>
             <div className="d-grid input-text-label" style={{ gridTemplateColumns: "2fr 2fr" }} >
-                <label>Enter your encrypted message</label>
+                <label>Enter your encrypted message:</label>
                 <label>Your Decrypted text is:</label>
             </div>
             <div className="text" >
@@ -75,13 +77,13 @@ const Decrypt = () => {
                     <div className="d-grid gap-3" style={{ gridTemplateColumns: "2fr 2fr" }}>
                         <div className="bg-light border rounded-3">
                             <div className="form">
-                                <textarea className="form-control" placeholder="Your cipher message goes here..." id="floatingTextarea1"
-                                    style={{ height: "15rem", position: "relative", left: "-7%" }}></textarea>
+                                <textarea className="form-control" placeholder="Your encrypted message goes here..." id="floatingTextarea1"
+                                    style={{ height: "15vw", position: "relative", left: "-7%" }}></textarea>
                             </div>
                         </div>
                         <div className="bg-light border rounded-3">
                             <textarea readOnly className="form-control" placeholder="Get your decrypted message here..." id="floatingTextarea2"
-                                style={{ height: "15rem", position: "relative", left: "-7%" }}></textarea>
+                                style={{ height: "15vw", position: "relative", left: "-7%" }}></textarea>
                         </div>
                     </div>
                 </div>
