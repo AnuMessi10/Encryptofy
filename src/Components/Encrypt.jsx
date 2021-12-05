@@ -25,7 +25,7 @@ function Encrypt() {
         <div>
             <div className="input-text-label" >
                 <label>Enter the text to be encrypted (plaintext)</label>
-                <label style={{ marginLeft: "21rem" }}>Your Encrypted text is:</label>
+                <label>Your Encrypted text is:</label>
                 <CopyBtn/>
             </div>
             <div className="text" >
