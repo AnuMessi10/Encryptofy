@@ -57,6 +57,10 @@ textarea{
   resize: none;
   margin: 0 3.4vw;
   text-size-adjust: none;
+  font-size: default;
+}
+textarea:focus{
+  outline: none!important;
 }
 
 .buttons{
@@ -71,7 +75,7 @@ textarea{
 }
 
 .pb-3{
-  padding-bottom: 0.75vw!important;
+  padding-bottom: 0.8vw!important;
 }
 
 #titleName{
@@ -114,7 +118,7 @@ body{
   font-size: 2.25vw;
   font-family: 'consolas', 'Times New Roman', Times, serif;
   position: absolute;
-  right: 1.75vw;
+  right: 1.5rem;
 }
 
 .copyBtn:hover{

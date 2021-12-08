@@ -37,16 +37,12 @@ function Encrypt() {
             </div>
             <div className="text" >
                 <div className="container-fluid pb-3">
-                    <div className="d-grid gap-3" style={{ gridTemplateColumns: "2fr 2fr" }}>
-                        <div className="bg-light rounded-3">
-                            <div className="form">
-                                <textarea rows = "15" name="inputEncrypt" className="form-control" placeholder="Your text goes here..." id="floatingTextarea1" style={{ position: "relative", left: "-7%" }}></textarea>
-                            </div>
+                    <div className="d-grid gap-2" style={{ gridTemplateColumns: "2fr 2fr" }}>
+                        <div className="form">
+                            <textarea rows="15" name="inputEncrypt" className="form-control" placeholder="Your text goes here..." id="floatingTextarea1" style={{ position: "relative", left: "-7%" }}></textarea>
                         </div>
-                        <div className="bg-light rounded-3">
-                            <textarea rows = "15" readOnly className="form-control" placeholder="Get your secret message here..." id="floatingTextarea2"
-                                style={{ position: "relative", left: "-7%" }}></textarea>
-                        </div>
+                        <textarea rows="15" readOnly className="form-control" placeholder="Get your secret message here..." id="floatingTextarea2"
+                            style={{ position: "relative", left: "-7%" }}></textarea>
                     </div>
                 </div>
             </div>

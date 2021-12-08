@@ -1,6 +1,6 @@
 import React from 'react';
 import "./App.css";
-import { Tabs, Encrypt, Decrypt, Typewriter, lock } from './index';
+import { Tabs, Encrypt, Decrypt, Typewriter, lock} from './index';
 
 function App() {
   return (
