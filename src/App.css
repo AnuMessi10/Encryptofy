@@ -111,10 +111,10 @@ body{
 }
 
 .copyBtn{
-  font-size: 4vw;
+  font-size: 2.25vw;
   font-family: 'consolas', 'Times New Roman', Times, serif;
   position: absolute;
-  right: 1.5vw;
+  right: 1.75vw;
 }
 
 .copyBtn:hover{
