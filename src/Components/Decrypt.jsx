@@ -92,6 +92,7 @@ const Decrypt = () => {
                 <div className="file btn btn-outline-primary btns">Upload your key <i class="fas fa-file-upload"></i><input type="file" id="uploadBtn" name="file" accept=".txt" onChange={handleChange} />
                 </div>
                 <button type="submit" className="btn btn-outline-success btns" onClick={decryptText} >Decrypt It! <i className="fas fa-unlock"></i></button>
+                <CopyBtn />
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" style={{ "display": "none" }}>
@@ -122,7 +123,6 @@ const Decrypt = () => {
                     </div>
                 </div>
             </div>
-            <CopyBtn />
         </div>
     )
 };

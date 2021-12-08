@@ -13,7 +13,7 @@ function Encrypt() {
             window.key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
             const hash = CryptoJS.AES.encrypt(userInput, window.key);
             document.getElementById('floatingTextarea2').value = hash.toString();
-            
+
         }
         else {
             blankInput[0].style.visibility = "visible";
@@ -53,6 +53,7 @@ function Encrypt() {
             <div className="buttons">
                 <button type="submit" onClick={encryptText} className="btn btn-outline-success btns">Encrypt It! <i className="fas fa-lock"></i></button>
                 <button onClick={downloadKey} className="btn btn-outline-primary btns">Save your key <i className="fas fa-download"></i></button>
+                <CopyBtn />
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" style={{ "display": "none" }}>
@@ -67,7 +68,6 @@ function Encrypt() {
                     </div>
                 </div>
             </div>
-            <CopyBtn />
         </div>
     )
 }

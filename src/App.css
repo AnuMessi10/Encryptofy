@@ -60,13 +60,17 @@ textarea{
 
 .buttons{
   display: flex;
-  justify-content: center;
+  justify-content:center;
 }
 .btns{
   width: 20vw;
   font-size: 1.45vw;
   font-weight: 500;
   margin: 0 1vw 0;
+}
+
+.pb-3{
+  padding-bottom: 0.75vw!important;
 }
 
 #titleName{
@@ -106,12 +110,14 @@ body{
 }
 
 .copyBtn{
-  border-radius: 50%;
-  font-size: 1.5rem;
-  display: inline-block;
-  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.5vw;
+  font-family: 'consolas', 'Times New Roman', Times, serif;
   position: absolute;
-  right: 1rem;
+  right: 1.5vw;
+}
+
+.copyBtn:hover{
+  cursor: pointer;
 }
 
 ::placeholder{
