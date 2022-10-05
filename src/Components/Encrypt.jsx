@@ -3,14 +3,16 @@ import CryptoJS from 'crypto-js';
 import { CopyBtn } from '..';
 
 function Encrypt() {
-
     function encryptText() {
+        // taking input from the user 
         var userInput = document.getElementById('floatingTextarea1').value;
         var blankInput = document.getElementsByClassName('alert');
 
+        // If the input is not empty, then encrypt the message and generate a key 
         if (userInput !== '') {
             blankInput[0].style.visibility = "hidden";
             window.key = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+            // using AES encryption to encrypt input messages.
             const hash = CryptoJS.AES.encrypt(userInput, window.key);
             document.getElementById('floatingTextarea2').value = hash.toString();
 
@@ -19,7 +21,7 @@ function Encrypt() {
             blankInput[0].style.visibility = "visible";
         }
     };
-
+    // function to download key
     function downloadKey() {
         const element = document.createElement("a");
         const file = new Blob([window.key], { type: 'text/plain' });
